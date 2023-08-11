@@ -4,6 +4,9 @@
   gather_facts: false
 
   tasks:
+    - name: Include vars
+      ansible.builtin.include_vars: ../vars/aap.yml
+
     - name: Create a workflow job with a pre step forced
       ansible.controller.workflow_job_template:
         name: WF_SNOW_Patch_AUTOMATIC
