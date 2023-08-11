@@ -3,6 +3,12 @@
   hosts: all
   gather_facts: false
 
+  environment:
+     CONTROLLER_HOST: "{{ controller_host  }}"
+     CONTROLLER_USERNAME: "{{ controller_username  }}"
+     CONTROLLER_PASSWORD: "{{ controller_password }}"
+     CONTROLLER_VERIFY_SSL: "{{ validate_certs  }}"
+
   tasks:
     - name: Include vars
       ansible.builtin.include_vars: ../vars/aap.yml
