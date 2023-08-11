@@ -1,0 +1,37 @@
+---
+- name: Add Workflow Play
+  hosts: all
+  gather_facts: false
+
+  tasks:
+    - name: Create a workflow job with a pre step forced
+      ansible.controller.workflow_job_template:
+        name: WF_SNOW_Patch_AUTOMATIC
+        inventory: HashiVault Manual Host Inv
+        workflow_nodes:
+          - identifier: WFS_SNOW_CHECK
+            unified_job_template:
+              organization:
+                name: Default
+              name: WFS_CheckChange
+              type: job_template
+            credentials: []
+            related:
+              success_nodes:
+                - identifier: WFS_Cust
+              failure_nodes: []
+              always_nodes: []
+              credentials: []
+          - identifier: WFS_Cust
+            all_parents_must_converge: false
+            unified_job_template:
+              organization:
+                name: Default
+              name: WFS_PatchHost
+              type: job_template
+            related:
+              success_nodes: []
+              failure_nodes: []
+              always_nodes: []
+              credentials: []
+      register: result    
