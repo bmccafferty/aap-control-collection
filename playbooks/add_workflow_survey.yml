@@ -49,7 +49,7 @@
               failure_nodes: []
               always_nodes: []
               credentials: []
-          - identifier: WFS_Cust
+          - identifier: "{{ job_name }}"
             all_parents_must_converge: false
             unified_job_template:
               organization:
