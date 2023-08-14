@@ -16,6 +16,7 @@
         name: WF_SNOW_Patch_AUTOMATIC
         inventory: HashiVault Manual Host Inv
         survey_enabled: yes
+        ask_limit_on_launch: true
         survey_spec: '{"name":"","description":"","spec":[{"question_name":"Change Number","question_description":"","required":true,"type":"text","variable":"snow_chg_no","min":0,"max":1024,"default":"","choices":"","new_question":false}]}'
         workflow_nodes:
           - identifier: WFS_SNOW_CHECK
