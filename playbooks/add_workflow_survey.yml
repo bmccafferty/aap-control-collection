@@ -16,7 +16,7 @@
         project: "{{ project_name }}"
         playbook: "{{ playbook_name }}"
         credentials:
-          - "Hasivault SSH Cred"
+          - "Lab SSH"
           - "AnsibleVault PWD"
         state: "present"
         controller_host: "{{ controller_host }}"
