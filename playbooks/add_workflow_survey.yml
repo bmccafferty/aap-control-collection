@@ -45,7 +45,7 @@
             credentials: []
             related:
               success_nodes:
-                - identifier: WFS_Cust
+                - identifier: "{{ job_name }}"
               failure_nodes: []
               always_nodes: []
               credentials: []
